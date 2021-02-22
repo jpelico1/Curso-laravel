@@ -25,4 +25,13 @@ Route::put('admin/menu/{id}','Admin\MenuController@update')->name('actualizar_me
 Route::get('admin/menu/{id}/eliminar','Admin\MenuController@destroy')->name('eliminar_menu');
 
 
+Route::get('admin/rol','Admin\RolController@index')->name('rol');
+Route::get('admin/rol/crear','Admin\RolController@create')->name('crear_rol');
+Route::post('admin/rol','Admin\RolController@store')->name('guardar_rol');
+Route::get('admin/rol/{id}/editar','Admin\RolController@edit')->name('editar_rol');
+Route::put('admin/rol/{id}','Admin\RolController@update')->name('actualizar_rol');
+Route::delete('admin/rol/{id}','Admin\PermisoController@destroy')->name('eliminar_rol');
+
+
+
 
