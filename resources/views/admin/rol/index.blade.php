@@ -13,7 +13,6 @@ Rol
 <div class="row">
     <div class="col-lg-12">
         @include('includes.mensaje')
-        @include('includes.form-error')
         <div class="box box-success">
             <div class="box-header with-border">
                 <h3 class="box-title">Rol</h3>
@@ -23,7 +22,7 @@ Rol
                 </div>
             </div>
             <div class="box-body">
-                <table class="table table-striped table-bordered table-hover">
+                <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -38,7 +37,7 @@ Rol
                                 <a href="{{route('editar_rol',['id'=>$data->id])}}" class="btn-accion-tabla tooltipsC"
                                     title="editar este registro">
                                     <i class="fa fa-fw fa-pencil"></i> </a>
-                                <form action="{{url("admin/rol/$data->id")}} " class="d-inline form-eliminar"
+                                <form action="{{route('eliminar_rol',['id'=>$data->id])}}" class="d-inline form-eliminar"
                                     method="POST">
                                     @csrf
                                     @method("delete")
@@ -47,6 +46,7 @@ Rol
                                         <i class="fa fa-fw fa-trash text-danger"></i> </button> </form>
                             </td>
                         </tr>
+
 
                         @endforeach
                     </tbody>

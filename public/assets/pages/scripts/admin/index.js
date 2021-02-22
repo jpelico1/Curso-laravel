@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     $("#tabla-data").on('submit', '.form-eliminar', function (){
         event.preventDefault();
         const form = $(this);
@@ -13,9 +13,11 @@ $(document).ready(function() {
         }).then((value)=>{
             if (value) {
                 ajaxRequest(form);
+
             }
         });
     });
+
 
     function ajaxRequest(form){
         $.ajax({
@@ -27,6 +29,7 @@ $(document).ready(function() {
                 form.parents('tr').remove();
                 Biblioteca.notificaciones('El registro fue eliminado correctamente','Biblioteca','success');
             } else {
+
                 Biblioteca.notificaciones('El registro no pudo ser eliminado, hay recursos usandolo','Biblioteca','error');
             }
         },

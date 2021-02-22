@@ -30,7 +30,11 @@ Route::get('admin/rol/crear','Admin\RolController@create')->name('crear_rol');
 Route::post('admin/rol','Admin\RolController@store')->name('guardar_rol');
 Route::get('admin/rol/{id}/editar','Admin\RolController@edit')->name('editar_rol');
 Route::put('admin/rol/{id}','Admin\RolController@update')->name('actualizar_rol');
-Route::delete('admin/rol/{id}','Admin\PermisoController@destroy')->name('eliminar_rol');
+Route::delete('admin/rol/{id}','Admin\RolController@destroy')->name('eliminar_rol');
+
+Route::get('admin/menu-rol','Admin\MenuRolController@index')->name('menu_rol');
+Route::post('admin/menu-rol','Admin\MenuRolController@store')->name('guardar_menu_rol');
+
 
 
 

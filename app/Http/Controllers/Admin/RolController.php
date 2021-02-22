@@ -88,6 +88,7 @@ class RolController extends Controller
     public function destroy(Request $request, $id)
     {
         if($request->ajax()){
+            dd($id);
             if(Rol::destroy($id)){
                 return response()->json(['mensaje'=>'ok']);
             }
